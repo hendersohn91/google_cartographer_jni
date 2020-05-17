@@ -1,0 +1,7 @@
+cartographer_standalone/
+build/
+**/Makefile
+**/*.class
+**/*.jar
+**/*.swp
+**/glogs/*
