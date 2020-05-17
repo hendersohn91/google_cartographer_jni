@@ -31,7 +31,7 @@ $ cd tests/cartographer_jni_test/
 $ sh make.sh
 ```
 
-See [Master Thesis](https://github.com/hendersohn91)
+See [Master Thesis](https://github.com/hendersohn91/google_cartographer_jni/blob/master/MA_Cartographer.pdf)
 # Restictions
 - The JNI provides the generation of a 2D map only
 - see Master Thesis for further information
