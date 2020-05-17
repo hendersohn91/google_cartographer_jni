@@ -2,6 +2,12 @@
 
 This project contains a java native interface to use google cartographer with Java. The code is tested at Ubuntu 18.04.2. The code was developed towards my master thesis at HTW-Dresden. For further documentation you can read this master thesis that is also contained in this repository.
 
+# Install Cartographer
+More information about the Google Cartographer can be found [here](https://github.com/cartographer-project/cartographer)
+```sh
+$ sh install_carto.sh
+```
+
 # Build the JNI
 ```sh
 $ cd src/
