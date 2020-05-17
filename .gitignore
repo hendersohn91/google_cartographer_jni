@@ -4,5 +4,6 @@ build/
 **/*.class
 **/*.jar
 !/cartographer*.jar
+tests/test_data/*.txt
 **/*.swp
 **/glogs/*

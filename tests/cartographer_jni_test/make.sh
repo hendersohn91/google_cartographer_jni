@@ -45,7 +45,7 @@ execute_test () {
     DIFF=$(echo "$END - $START" | bc)
     echo "time needed: $DIFF s"
     #plot
-	gnuplot -e 'set palette defined ( -1 "#000000", 0 "#00FF00", 50 "#0000FF", 100 "#FF0000" ); set size ratio -1; plot "grid_java.txt" u 1:2:3 ls 5 lc palette z' -p
+	gnuplot -e 'set palette defined ( -1 "#000000", 0 "#00FF00", 50 "#0000FF", 100 "#FF0000" ); set size ratio -1; plot "build/grid_java.txt" u 1:2:3 ls 5 lc palette z' -p
 }
 
 cleanup () {

@@ -49,7 +49,7 @@ public class CartographerJavaTest {
         int[] gridmap = util.getGridMap();
         int width = gridmap[gridmap.length - 2];
         int height = gridmap[gridmap.length - 1];
-        String resultGridPath = System.getProperty("user.dir") + "/grid_java.txt";
+        String resultGridPath = System.getProperty("user.dir") + "/build/grid_java.txt";
         try {
             BufferedWriter gridmapWriter = new BufferedWriter(new FileWriter(resultGridPath));
             for (int y = 0; y < height; y++) {
