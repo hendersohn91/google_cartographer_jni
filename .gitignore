@@ -3,5 +3,6 @@ build/
 **/Makefile
 **/*.class
 **/*.jar
+!/cartographer*.jar
 **/*.swp
 **/glogs/*
