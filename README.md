@@ -35,3 +35,6 @@ See [Master Thesis](https://github.com/hendersohn91/google_cartographer_jni/blob
 # Restictions
 - The JNI provides the generation of a 2D map only
 - see Master Thesis for further information
+
+# Examples
+![](https://raw.githubusercontent.com/hendersohn91/google_cartographer_jni/master/images/htw_3.png)![](https://raw.githubusercontent.com/hendersohn91/google_cartographer_jni/master/images/htw_info.png)
