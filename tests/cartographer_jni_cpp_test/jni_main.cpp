@@ -3,7 +3,7 @@
 #include <cartographer/mapping/map_builder.h>
 #include <cartographer/common/configuration_file_resolver.h>
 #include <cartographer/io/probability_grid_points_processor.h>
-#include "cartographer_jni_cpp_bridge.h"
+#include <cartographer_jni_cpp_bridge.h>
 #ifdef WINDOWS
 #include <direct.h>
 #define GetCurrentDir _getcwd

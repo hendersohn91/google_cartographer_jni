@@ -1,10 +1,15 @@
 #!/bin/bash
 set -e
+GIT_ROOT_DIR=`git rev-parse --show-toplevel`
+SCRIPT_PATH=$GIT_ROOT_DIR/tests/cartographer_jni_cpp_test
+NATIVE_JAR='cartographer-platform-1.0.0-natives-linux.jar'
+cd $SCRIPT_PATH
 rm -rf build/
 if [ ! -d "build" ]; then
 	mkdir build
 fi
 cd build
+jar xvf $GIT_ROOT_DIR/$NATIVE_JAR
 cmake ..
 make
 ./cartographer_jni_cpp_test
