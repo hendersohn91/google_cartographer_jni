@@ -3,6 +3,14 @@ set -e
 GIT_ROOT_DIR=`git rev-parse --show-toplevel`
 SCRIPT_PATH=$GIT_ROOT_DIR/tests/cartographer_jni_cpp_test
 NATIVE_JAR='cartographer-platform-1.0.0-natives-linux.jar'
+
+echo
+echo 'Created by Eric Hähner'
+echo 'https://github.com/hendersohn91/google_cartographer_jni'
+echo 'Options: ./make.sh'
+echo 'Note: Cartographer JNI jars should be created before executing this script. Execute make.sh at src/ before.'
+echo
+
 cd $SCRIPT_PATH
 rm -rf build/
 # extract build files if not existing

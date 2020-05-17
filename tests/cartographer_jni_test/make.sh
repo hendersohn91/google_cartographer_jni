@@ -10,7 +10,7 @@ SCRIPT_PATH=$GIT_ROOT_DIR/tests/cartographer_jni_test
 
 echo
 echo 'Created by Eric Hähner'
-echo 'https://github.com/thefangbear/JNI-By-Examples'
+echo 'https://github.com/hendersohn91/google_cartographer_jni'
 echo 'Options: ./make.sh'
 echo 'Note: Cartographer JNI jars should be created and copied to this project before executing this script'
 echo '--build                 extract jars and compile test java file'
