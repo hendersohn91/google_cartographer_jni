@@ -5,7 +5,6 @@ JAVA_LIB_JAR='cartographer-1.0.0.jar'
 JAVA_BRIDGE_PATH='cartographer/jni/CartographerJniJavaBridge.java'
 JAVA_BRIDGE_PATH_CLASS='cartographer/jni/CartographerJniJavaBridge.class'
 JAVA_BRIDGE_CLASS_NAME='cartographer.jni.CartographerJniJavaBridge'
-PWD=`pwd`
 # find java version
 JAVA_VER=$(java -version 2>&1 | sed -n ';s/.* version "\(.*\)\.\(.*\)\..*".*/\1\2/p;')
 
@@ -40,7 +39,7 @@ build_project () {
     cd build
     cmake $curdir
     make
-    jar cvf $NATIVE_JAR libcartographer_native_interface.so
+    jar cvf $NATIVE_JAR libcartographer_native_interface.so -C ../src/ cartographer_jni_cpp_bridge.h
     mv $NATIVE_JAR ../
     cd $curdir
     javac $JAVA_BRIDGE_PATH
