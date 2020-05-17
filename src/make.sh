@@ -1,5 +1,7 @@
 #!/bin/sh
 set -e
+GIT_ROOT_DIR=`git rev-parse --show-toplevel`
+SCRIPT_PATH=$GIT_ROOT_DIR/src
 NATIVE_JAR='cartographer-platform-1.0.0-natives-linux.jar'
 JAVA_LIB_JAR='cartographer-1.0.0.jar'
 JAVA_BRIDGE_PATH='cartographer/jni/CartographerJniJavaBridge.java'
@@ -23,6 +25,7 @@ if [ -z "$JAVA_HOME"]; then
 fi
 
 create_cpp_header () {
+	cd $SCRIPT_PATH
     if [ "$JAVA_VER" -ge 18 ];then
         javac $JAVA_BRIDGE_PATH -h .
     else
@@ -32,16 +35,16 @@ create_cpp_header () {
 }
 
 build_project () {
-    curdir=`pwd`
+    cd $SCRIPT_PATH
     cd ../
     rm -rf build
     mkdir build
     cd build
-    cmake $curdir
+    cmake $SCRIPT_PATH
     make
     jar cvf $NATIVE_JAR libcartographer_native_interface.so -C ../src/ cartographer_jni_cpp_bridge.h
     mv $NATIVE_JAR ../
-    cd $curdir
+    cd $SCRIPT_PATH
     javac $JAVA_BRIDGE_PATH
     jar cvf $JAVA_LIB_JAR $JAVA_BRIDGE_PATH_CLASS
     mv $JAVA_LIB_JAR ../
@@ -50,6 +53,7 @@ build_project () {
 }
 
 cleanup () {
+	cd $GIT_ROOT_DIR
     echo "deleted the following files:"
     find . -name "*.class" -type f
     find . -name "*.class" -type f -delete
